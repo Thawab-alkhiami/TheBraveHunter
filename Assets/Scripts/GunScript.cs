@@ -9,12 +9,13 @@ public class GunScript : MonoBehaviour
     [SerializeField] public float _walkSpeed = 5f;
     [SerializeField] public Rigidbody _bullet;
 
-    public int _lives = 3;
+    private int _lives = 3;
     
     // fire time delay
     private float _nextFireTime = 0f;
     private float _fireCoolDownTime = 0.5f;
     
+    [SerializeField] private GameObject SpawnManager;
    
     void Start()
     {
@@ -59,11 +60,13 @@ public class GunScript : MonoBehaviour
 
     public void PlayerDeath()
     {
+        Debug.Log("_lives before: "+_lives);
         _lives--;
-        Debug.Log("_lives: "+_lives);
+        Debug.Log("_lives after: "+_lives);
         if (_lives == 0)
         {
             Debug.Log("player death ");
+            SpawnManager.GetComponent<SpawnManager>().onPlayerDeath();
             Destroy(this.gameObject);
         }
     }

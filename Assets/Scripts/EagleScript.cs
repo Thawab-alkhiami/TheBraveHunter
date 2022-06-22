@@ -7,31 +7,27 @@ public class EagleScript : MonoBehaviour
     [SerializeField] public GameObject target;
     [SerializeField] public float _eagleSpeed = 0.5f;
     private Animator animator;
-    private bool isAttacking = false;
     private float _distance;
     private float _distance1;
     private GunScript _gunScript;
-    private Vector3 stageDimensions;
+   
     
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        _distance = (target.transform.position - this.transform.position).magnitude;
-        _distance1 = Vector3.Distance(this.transform.position, target.transform.position);
-        Debug.Log("_distance: "+_distance +" _distance1: " +_distance1);
-        //convert the values to world point
-        stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,0));
-        Debug.Log("stageDimensions x: "+stageDimensions.x+" stageDimensions y: "+stageDimensions.y +" stageDimensions z: "+stageDimensions.z);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        _distance = (target.transform.position - this.transform.position).magnitude;
-        transform.position =
-            Vector3.MoveTowards(transform.position, target.transform.position, _eagleSpeed * Time.time);
+        //y - 0.65f / z + 0.05f
+        {
+            transform.position = Vector3.MoveTowards(this.transform.position,
+                new Vector3(target.transform.position.x, target.transform.position.y - 0.65f,
+                    target.transform.position.z +1f), _eagleSpeed);
+
+        }
     }
 
 
@@ -41,14 +37,11 @@ public class EagleScript : MonoBehaviour
         {
             animator.SetTrigger("isDead");
             Debug.Log("Bullet Collision!, Eagle die");
-            //_eagleSpeed = 0f;
-            
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }else if (other.gameObject.CompareTag("Gun"))
         {
             Debug.Log("Gun Collision!, minimize lives");
-            _gunScript = new GunScript();
-            _gunScript.PlayerDeath();
+            other.GetComponent<GunScript>().PlayerDeath();
             //flyaway();
         }
         

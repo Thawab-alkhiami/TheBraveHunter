@@ -10,56 +10,59 @@ public class EagleScript : MonoBehaviour
     private bool isAttacking = false;
     private float _distance;
     private float _distance1;
+    private GunScript _gunScript;
+    private Vector3 stageDimensions;
     
     // Start is called before the first frame update
     void Start()
     {
-        //animator = this.GetComponent<Animator>();
         animator = GetComponentInChildren<Animator>();
         _distance = (target.transform.position - this.transform.position).magnitude;
         _distance1 = Vector3.Distance(this.transform.position, target.transform.position);
         Debug.Log("_distance: "+_distance +" _distance1: " +_distance1);
+        //convert the values to world point
+        stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,0));
+        Debug.Log("stageDimensions x: "+stageDimensions.x+" stageDimensions y: "+stageDimensions.y +" stageDimensions z: "+stageDimensions.z);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         _distance = (target.transform.position - this.transform.position).magnitude;
-        //if (_distance < 3 && !isAttacking)
-        //if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Jump") 
-            //&& !isAttacking
-        //    )
-        //{
-        //transform.Rotate(50f, 0f , 0f);
-        //transform.up = target.transform.position - transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, _eagleSpeed * Time.time);
-
-            //isAttacking = true;
-
-        //}
+        transform.position =
+            Vector3.MoveTowards(transform.position, target.transform.position, _eagleSpeed * Time.time);
     }
-    
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Gun") )
+        if (other.gameObject.CompareTag("Bullet"))
         {
             animator.SetTrigger("isDead");
-            Debug.Log("Gun Collision!, dstroy!");
-            _eagleSpeed = 0f;
+            Debug.Log("Bullet Collision!, Eagle die");
+            //_eagleSpeed = 0f;
             
             //Destroy(this.gameObject);
+        }else if (other.gameObject.CompareTag("Gun"))
+        {
+            Debug.Log("Gun Collision!, minimize lives");
+            _gunScript = new GunScript();
+            _gunScript.PlayerDeath();
+            //flyaway();
         }
         
     }
 
-    void Attack()
+    public void flyaway()
     {
-        transform.Rotate(50f, 0f , 0f);
+        Debug.Log("flyaway!");
+        transform.Translate(Vector3.left * Time.time * _eagleSpeed);
+
+        if (transform.position.y > 10f)
+        {
+            Destroy(this.gameObject);
+        }
     }
-    
-    public IEnumerator stopAttack(float length)
-    {
-        yield return new WaitForSeconds(length);
-        isAttacking = false;
-    }
+
 }

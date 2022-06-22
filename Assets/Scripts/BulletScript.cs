@@ -19,16 +19,10 @@ public class BulletScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bird"))
+        if (other.CompareTag("Eagle"))
         {
-            Debug.Log("Bird Collision!, Get a point");
-            Destroy(other.gameObject);
-        }/*else if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player Collision!");
-            other.GetComponent<PlayerBehaviour>().Damage();
-            //Destroy(this.gameObject);
-        } */
+            Debug.Log("Eagle Collision!, Get a point");
+        }
         else
         {
             Debug.Log("Other Collision!");

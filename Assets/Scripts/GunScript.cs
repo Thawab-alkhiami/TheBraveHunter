@@ -5,9 +5,8 @@ using UnityEngine;
 public class GunScript : MonoBehaviour
 {
     [SerializeField] public float _rotationSpeed = 50f ;
-    [SerializeField] public float _bulletSpeed = 20f;
     [SerializeField] public float _walkSpeed = 3f;
-    [SerializeField] public Rigidbody _bullet;
+    [SerializeField] public GameObject _bullet;
 
     private int _lives = 3;
     
@@ -15,7 +14,7 @@ public class GunScript : MonoBehaviour
     private float _nextFireTime = 0f;
     private float _fireCoolDownTime = 0.5f;
     
-    [SerializeField] private GameObject SpawnManager;
+    [SerializeField] public GameObject SpawnManager;
    
     void Start()
     {
@@ -42,13 +41,12 @@ public class GunScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && _nextFireTime < Time.time) //space button
         {
-            Rigidbody instantiatedBullet = Instantiate(_bullet, // an object to instantiate
+            Instantiate(_bullet, // an object to instantiate
                     new Vector3(transform.position.x,transform.position.y - 0.035f,transform.position.z + 0.25f), //3D position
-                    transform.rotation) // object rotation
-                as Rigidbody;
+                    transform.rotation);
             
             //move the bullet
-            instantiatedBullet.velocity = transform.TransformDirection(new Vector3(0, 0,_bulletSpeed));
+            //instantiatedBullet.velocity = transform.TransformDirection(new Vector3(0, 0,_bulletSpeed));
             
             //make interval between shots
             _nextFireTime = Time.time + _fireCoolDownTime;

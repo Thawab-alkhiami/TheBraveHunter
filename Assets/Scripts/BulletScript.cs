@@ -19,6 +19,7 @@ public class BulletScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Eagle"))
         {
             Debug.Log("Eagle Collision!, Get a point");
@@ -29,4 +30,5 @@ public class BulletScript : MonoBehaviour
         }
         
     }
+    
 }

@@ -6,7 +6,7 @@ public class GunScript : MonoBehaviour
 {
     [SerializeField] public float _rotationSpeed = 50f ;
     [SerializeField] public float _bulletSpeed = 20f;
-    [SerializeField] public float _walkSpeed = 5f;
+    [SerializeField] public float _walkSpeed = 3f;
     [SerializeField] public Rigidbody _bullet;
 
     private int _lives = 3;
@@ -19,7 +19,7 @@ public class GunScript : MonoBehaviour
    
     void Start()
     {
-        transform.position = new Vector3(0f, 0f, -8f);
+        transform.position = new Vector3(0f, 0f, 0f);
     }
 
     void Update()
@@ -60,7 +60,6 @@ public class GunScript : MonoBehaviour
 
     public void PlayerDeath()
     {
-        Debug.Log("_lives before: "+_lives);
         _lives--;
         Debug.Log("_lives after: "+_lives);
         if (_lives == 0)

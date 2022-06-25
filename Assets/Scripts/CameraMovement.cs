@@ -12,6 +12,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         _offset = transform.position - _target.transform.position;
+        Debug.Log(_offset);
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class CameraMovement : MonoBehaviour
         if (_target != null)
         {
             transform.position = _target.transform.position + _offset;
+             transform.rotation = _target.transform.rotation;
         }
     }
 }

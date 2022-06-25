@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * _bulletSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * _bulletSpeed * Time.deltaTime);
     }
     
     private void OnTriggerEnter(Collider other)
@@ -27,6 +27,7 @@ public class BulletScript : MonoBehaviour
         else
         {
             Debug.Log("Other Collision!");
+            Destroy(this);
         }
         
     }

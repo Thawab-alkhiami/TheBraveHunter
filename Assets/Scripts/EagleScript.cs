@@ -21,7 +21,7 @@ public class EagleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.gameObject != null && target.gameObject != null)
+        if(this.gameObject != null && target.gameObject != null && !this.animator.GetBool("isDead"))
         {
             //y - 0.65f / z + 0.05f
             transform.position = Vector3.MoveTowards(this.transform.position,
@@ -29,19 +29,26 @@ public class EagleScript : MonoBehaviour
                     target.transform.position.z + 0.5f), _eagleSpeed);
 
         }
+
+        if (this.gameObject != null)
+        {
+            this.gameObject.SetActive(true);
+        }
+
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("isDead: "+ this.animator.GetBool("isDead"));
-        if (this.gameObject != null && other.gameObject != null)
+        if (this.gameObject != null && other.gameObject != null && !this.animator.GetBool("isDead"))
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
                 animator.SetTrigger("isDead");
                 Debug.Log("Bullet Collision!, Eagle die");
-                //Destroy (gameObject, 5);
+                //this.gameObject.SetActive(false);
+                //Destroy (this);
             }
             else if (other.gameObject.CompareTag("Gun"))
             {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunScript : MonoBehaviour
 {
     [SerializeField] public float _rotationSpeed = 50f ;
+    [SerializeField] public float _bulletSpeed = 20f;
     [SerializeField] public float _walkSpeed = 3f;
     [SerializeField] public GameObject _bullet;
 
@@ -14,7 +15,7 @@ public class GunScript : MonoBehaviour
     private float _nextFireTime = 0f;
     private float _fireCoolDownTime = 0.5f;
     
-    [SerializeField] public GameObject SpawnManager;
+    [SerializeField] private GameObject SpawnManager;
    
     void Start()
     {

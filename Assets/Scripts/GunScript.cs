@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GunScript : MonoBehaviour
 {
     [SerializeField] public float _rotationSpeed = 50f ;
     [SerializeField] public float _bulletSpeed = 20f;
     [SerializeField] public float _walkSpeed = 3f;
     [SerializeField] public GameObject _bullet;
+    [SerializeField] private UI_Manager _uiManager;
 
-    private int _lives = 3;
+    private int _lives = 5;
     
     // fire time delay
     private float _nextFireTime = 0f;
@@ -20,6 +22,7 @@ public class GunScript : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(0f, 0f, 0f);
+        _uiManager.UpdateLives(_lives);
     }
 
     void Update()
@@ -65,8 +68,10 @@ public class GunScript : MonoBehaviour
         if (_lives == 0)
         {
             Debug.Log("player death ");
-            //SpawnManager.GetComponent<SpawnManager>().onPlayerDeath();
-            //Destroy(this.gameObject);
+            SpawnManager.GetComponent<SpawnManager>().onPlayerDeath();
+            Destroy(this.gameObject);
+            _uiManager.EndGame();
+            _walkSpeed = 0f;
         }
     }
     
@@ -96,3 +101,5 @@ public class GunScript : MonoBehaviour
 
     }
 }
+
+

@@ -8,6 +8,9 @@ TagManager:
   - Gun
   - GunBarrel
   - Bullet
+  - Ground
+  - Edge
+  - Mushroom
   layers:
   - Default
   - TransparentFX

@@ -80,10 +80,11 @@ public class GunScript : MonoBehaviour
             }
             else if(other.gameObject.CompareTag("Ground"))
             {
-                Debug.Log("Gun-GroundGround Collision!, IGNORE!");
+                Debug.Log("Gun-GroundGround Collision!, ignore!");
             }
-            else if (other.gameObject.CompareTag("Ground"))
+            else if (other.gameObject.CompareTag("Mushroom"))
             {
+                Debug.Log("Gun-Mushroom Collision!, WIN!");
             }
             else
             {

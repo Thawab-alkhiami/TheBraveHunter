@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
     [SerializeField] private Text _livestext;
+    [SerializeField] private Text _desctext;
 
     public void UpdateLives(int health)
     {

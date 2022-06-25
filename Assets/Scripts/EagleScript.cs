@@ -5,7 +5,7 @@ using UnityEngine;
 public class EagleScript : MonoBehaviour
 {
     [SerializeField] public GameObject target;
-    [SerializeField] public float _eagleSpeed = 0.5f;
+    [SerializeField] public float _eagleSpeed = 0.3f;
     private Animator animator;
     private float _distance;
     private float _distance1;
@@ -41,7 +41,7 @@ public class EagleScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("isDead: "+ this.animator.GetBool("isDead"));
-        if (this.gameObject != null && other.gameObject != null && !this.animator.GetBool("isDead"))
+        if (this!= null && other != null && this.gameObject != null && other.gameObject != null && !this.animator.GetBool("isDead"))
         {
             if (other.gameObject.CompareTag("Bullet"))
             {

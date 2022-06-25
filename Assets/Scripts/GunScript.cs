@@ -9,7 +9,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] public float _bulletSpeed = 20f;
     [SerializeField] public float _walkSpeed = 3f;
     [SerializeField] public GameObject _bullet;
-    [SerializeField] private UI_Manager _uiManager;
+    [SerializeField] public UI_Manager _uiManager;
 
     private int _lives = 5;
     

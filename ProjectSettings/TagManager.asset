@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Edge
   - Mushroom
+  - win
   layers:
   - Default
   - TransparentFX

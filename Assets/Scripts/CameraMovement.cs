@@ -9,8 +9,7 @@ public class CameraMovement : MonoBehaviour
     private Vector3 _offset;
     private Quaternion Turnto;
     private bool lookAtTarget = false;
-    private float smoothFactor = 0.5f;
-    
+
     // Start is called before the first frame update
     void Start()
     {

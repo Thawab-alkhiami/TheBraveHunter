@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
         {
             //_enemyPrefab = new GameObject();
             GameObject eagleObject = (GameObject)Instantiate(_enemyPrefab,
-                new Vector3(Random.Range(-3f, 3f), Random.Range(2f, 5f), Random.Range(-3f, 3f)),
+                new Vector3(Random.Range(-10f, 10f), Random.Range(2f, 5f), Random.Range(10f, 15f)),
                 transform.rotation * Quaternion.Euler(0f, 180f, 0f));
             yield return new WaitForSeconds(_delay);
         }

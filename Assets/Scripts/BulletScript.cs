@@ -22,12 +22,16 @@ public class BulletScript : MonoBehaviour
         
         if (other.CompareTag("Eagle"))
         {
-            Debug.Log("Eagle Collision!, Get a point");
+            Debug.Log("Bullet-Eagle Collision!, Get a point");
+        }
+        else if(other.CompareTag("Ground"))
+        {
+            Debug.Log("Bullet-Ground Collision!");
+            Destroy(this.gameObject);
         }
         else
         {
-            Debug.Log("Other Collision!");
-            Destroy(this);
+            Debug.Log("Bullet-other Collision!");
         }
         
     }

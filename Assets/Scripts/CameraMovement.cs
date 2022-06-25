@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour
         if (_target != null)
         {
             transform.position = _target.transform.position + _offset;
-             transform.rotation = _target.transform.rotation + _offset;
+            transform.LookAt(_target.position);
         }
     }
 }

@@ -18,6 +18,11 @@ public class UI_Manager : MonoBehaviour
         _livestext.text = "GAME OVER! ";
     }
     
+    public void Win()
+    {
+        _livestext.text = "Congrats! ";
+    }
+    
     // Start is called before the first frame update
     void Start()
     {

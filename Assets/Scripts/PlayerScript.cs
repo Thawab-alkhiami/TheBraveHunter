@@ -63,7 +63,7 @@ public class PlayerScript : MonoBehaviour
         if (_lives == 0)
         {
             Debug.Log("player death ");
-            SpawnManager.GetComponent<SpawnManager>().onPlayerDeath();
+            SpawnManager.GetComponent<SpawnManager>().stop();
             Destroy(this.gameObject);
         }
     }

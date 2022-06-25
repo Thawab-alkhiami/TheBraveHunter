@@ -64,14 +64,16 @@ public class GunScript : MonoBehaviour
     public void PlayerDeath()
     {
         _lives--;
+        _uiManager.UpdateLives(_lives);
         Debug.Log("_lives after: "+_lives);
+        
         if (_lives == 0)
         {
             Debug.Log("player death ");
-            SpawnManager.GetComponent<SpawnManager>().onPlayerDeath();
-            Destroy(this.gameObject);
+            SpawnManager.GetComponent<SpawnManager>().stop();
             _uiManager.EndGame();
             _walkSpeed = 0f;
+            Destroy(gameObject);
         }
     }
     
@@ -89,7 +91,13 @@ public class GunScript : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("Mushroom"))
             {
-                Debug.Log("Gun-Mushroom Collision!, WIN!");
+                Debug.Log("Gun-Mushroom Collision!, move to the next scene");
+                
+            }else if (other.gameObject.CompareTag("win"))
+            {
+                Debug.Log("Gun-win Collision!, WIN!");
+                _uiManager.Win();
+                SpawnManager.GetComponent<SpawnManager>().stop();
             }
             else
             {

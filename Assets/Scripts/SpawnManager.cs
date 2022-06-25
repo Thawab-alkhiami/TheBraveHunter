@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour
         
     }
     
-    public void onPlayerDeath()
+    public void stop()
     {
         Debug.Log("_alive = false");
         _alive = false;

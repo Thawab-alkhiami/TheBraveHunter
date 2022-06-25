@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
 {
-    [SerializeField] private Text _livestext;
+    [SerializeField] private TextMeshProUGUI _livestext;
 
     public void UpdateLives(int health)
     {

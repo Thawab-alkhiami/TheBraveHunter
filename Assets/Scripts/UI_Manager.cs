@@ -20,8 +20,8 @@ public class UI_Manager : MonoBehaviour
         _desctext.text = "GAME OVER! ";
         _livestext.color = Color.red;
         _desctext.color = Color.red;
-        _livestext.fontSize = 48;
-        _desctext.fontSize = 48;
+        //_livestext.fontSize = 30;
+        //_desctext.fontSize = 30;
     }
     
     public void Win()
@@ -30,8 +30,8 @@ public class UI_Manager : MonoBehaviour
         _desctext.text = "Congrats! ";
         _livestext.color = Color.blue;
         _desctext.color = Color.blue;
-        _livestext.fontSize = 48;
-        _desctext.fontSize = 48;
+        //_livestext.fontSize = 30;
+        //_desctext.fontSize = 30;
     }
     
     // Start is called before the first frame update

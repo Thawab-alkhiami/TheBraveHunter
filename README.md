@@ -100,7 +100,7 @@ Each scene has different background music.
 The camera follows the hunter and rotate with him.
 
 ## Directional light
-The light inttnsity changes when the scene changes day/night.
+The light intensity changes when the scene changes day/night.
 
 ## Demo video
 https://drive.google.com/file/d/1c9-YuCbMtfN5GsMEBCuDewkx9AjADvXP/view?usp=sharing

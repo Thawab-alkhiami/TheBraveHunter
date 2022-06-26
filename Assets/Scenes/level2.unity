@@ -2115,6 +2115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _livestext: {fileID: 20398990}
+  _desctext: {fileID: 1191118347}
 --- !u!114 &1613327498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2715,7 +2716,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.14324492, g: 0.16664495, b: 0.2735849, a: 1}
+  m_Color: {r: 0.34389463, g: 0.3584455, b: 0.4528302, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

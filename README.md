@@ -70,7 +70,7 @@ The lives text is updated when the hunter's lives changed.
 The target text is updated when changing the scene.
 
 ### Win Text
-Both texts changed to Congrats when the player win.
+Both texts changed to Congrats when the player wins.
 ![](https://github.com/Thawab-alkhiami/TheBraveHunter/blob/main/Assets/Images/win.png)
 
 ### Game Over Text
@@ -78,7 +78,7 @@ Both texts changed to Game Over when the player lose.
 ![](https://github.com/Thawab-alkhiami/TheBraveHunter/blob/main/Assets/Images/game%20over.png)
 
 ## Environment and Borders
-When the hunter collides with the quads it bonuces back and cannot cross the borders.
+When the hunter collides with the quads it bounces back and cannot cross the borders.
 
 ### Day Quads
 ![](https://github.com/Thawab-alkhiami/TheBraveHunter/blob/main/Assets/Images/day%20quad.png)
@@ -91,10 +91,10 @@ The game contains 2 scenes. each scene has its special nature objects, light, mu
 To move to the first scene, the hunter should collide with the **red** Mushroom.
 
 ## Asset Store
-We used free assets for the huntr's gun, eagle, and forestt objects
+We used free assets for the hunter's gun, eagle, and forest objects
 
 ## Back Ground Music
-Each scene has a different background music.
+Each scene has different background music.
 
 ## Camera
 The camera follows the hunter and rotate with him.

@@ -65,11 +65,11 @@ public class GunScript : MonoBehaviour
     {
         _lives--;
         _uiManager.UpdateLives(_lives);
-        Debug.Log("_lives after: "+_lives);
+        //Debug.Log("_lives after: "+_lives);
         
         if (_lives == 0)
         {
-            Debug.Log("player death ");
+            //Debug.Log("player death ");
             SpawnManager.GetComponent<SpawnManager>().stop();
             _uiManager.EndGame();
             _walkSpeed = 0f;
@@ -83,11 +83,11 @@ public class GunScript : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Eagle"))
             {
-                Debug.Log("Gun-Eagle Collision!");
+                //Debug.Log("Gun-Eagle Collision!, minimize lives");
             }
             else if(other.gameObject.CompareTag("Ground"))
             {
-                Debug.Log("Gun-GroundGround Collision!, ignore!");
+                //Debug.Log("Gun-GroundGround Collision!, ignore!");
             }
             else if (other.gameObject.CompareTag("Mushroom"))
             {

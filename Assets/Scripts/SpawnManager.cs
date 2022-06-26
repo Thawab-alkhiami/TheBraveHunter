@@ -40,7 +40,7 @@ public class SpawnManager : MonoBehaviour
     
     public void stop()
     {
-        Debug.Log("_alive = false");
+        //Debug.Log("_alive = false");
         _alive = false;
     }
 }

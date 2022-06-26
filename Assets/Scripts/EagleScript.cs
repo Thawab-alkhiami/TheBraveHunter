@@ -46,13 +46,13 @@ public class EagleScript : MonoBehaviour
             if (other.gameObject.CompareTag("Bullet"))
             {
                 animator.SetTrigger("isDead");
-                Debug.Log("Eagle-Bullet Collision!, Eagle die");
+                //Debug.Log("Eagle-Bullet Collision!, Eagle die");
                 //this.gameObject.SetActive(false);
                 //Destroy (this);
             }
             else if (other.gameObject.CompareTag("Gun"))
             {
-                Debug.Log("Eagle-Gun Collision!, minimize lives");
+                //Debug.Log("Eagle-Gun Collision!, minimize lives");
                 other.GetComponent<GunScript>().PlayerDeath();
                 //Destroy(this.gameObject);
                 //flyaway();

@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
         _offset = transform.position - _target.transform.position;
         _offset = new Vector3(transform.position.x - _target.position.x, transform.position.y - _target.position.y,
             transform.position.z - _target.position.z+1f);
-        Debug.Log("offset: "+_offset.ToString());
+        //Debug.Log("offset: "+_offset.ToString());
     }
 
     // Update is called once per frame

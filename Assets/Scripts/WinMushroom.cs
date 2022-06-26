@@ -10,7 +10,8 @@ public class WinMushroom : MonoBehaviour
     {
         if (other.CompareTag("Gun"))
         {
-            //SceneManager.LoadScene(1);
+            Debug.Log("Mushroom-Gun Collision!, WIN!");
+            //_uiManager.Win();
         }
     }
     

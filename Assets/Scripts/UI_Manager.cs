@@ -17,11 +17,19 @@ public class UI_Manager : MonoBehaviour
     public void EndGame()
     {
         _livestext.text = "GAME OVER! ";
+        _desctext.text = "GAME OVER! ";
+        _livestext.color = Color.red;
+        _desctext.color = Color.red;
+        _livestext.fontSize = 24;
+        _desctext.fontSize = 24;
     }
     
     public void Win()
     {
         _livestext.text = "Congrats! ";
+        _desctext.text = "Congrats! ";
+        _livestext.fontSize = 24;
+        _desctext.fontSize = 24;
     }
     
     // Start is called before the first frame update

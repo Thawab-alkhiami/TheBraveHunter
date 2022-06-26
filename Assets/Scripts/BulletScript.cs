@@ -31,6 +31,7 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
+            Destroy(this.gameObject);
             //Debug.Log("Bullet-other Collision!");
         }
         
